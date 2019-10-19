@@ -6,12 +6,12 @@
         private static readonly object LockObject = new object();
         private readonly int _instantiatedVariable;
 
-        private SingletonDesignPattern()
+        private SingletonDesignPattern(int instanceVariable)
         {
-            _instantiatedVariable = 1;
+            _instantiatedVariable = instanceVariable;
         }
 
-        public static SingletonDesignPattern GetInstance()
+        public static SingletonDesignPattern GetInstance(int instanceVariable)
         {
             //check for null instance to avoid always creating the lock if we already have an instance
             if (_singletonInstance == null)
@@ -20,7 +20,7 @@
                 {
                     if (_singletonInstance == null)
                     {
-                        _singletonInstance = new SingletonDesignPattern();
+                        _singletonInstance = new SingletonDesignPattern(instanceVariable);
                     }
                 }
             }

@@ -6,9 +6,13 @@ namespace SingletonExample
     {
         static void Main(string[] args)
         {
-            var singletonInstance = SingletonDesignPattern.GetInstance();
+            var firstInstance = SingletonDesignPattern.GetInstance(1);
+            var secondInstance = SingletonDesignPattern.GetInstance(2);
+            var thirdInstance = SingletonDesignPattern.GetInstance(3);
 
-            Console.WriteLine(singletonInstance.GetInstanciatedVariable());
+            Console.WriteLine(firstInstance.GetInstanciatedVariable());
+            Console.WriteLine(secondInstance.GetInstanciatedVariable());
+            Console.WriteLine(thirdInstance.GetInstanciatedVariable());
         }
     }
 }
